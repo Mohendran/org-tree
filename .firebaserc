@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "org-tree-5ab8c": {
+      "hosting": {
+        "org-tree": [
+          "org-tree-5ab8c"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "org-tree-5ab8c"
+  }
+}

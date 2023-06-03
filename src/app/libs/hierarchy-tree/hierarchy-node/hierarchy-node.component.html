@@ -1,0 +1,5 @@
+<div ngClass="node-line-vertical" class="node-line" *ngIf="hasParent"></div>
+<div class="node-box hierarchy-tree-border" dndDropzone (dndDrop)="onDrop($event, node.Members)">
+  <ng-container *ngTemplateOutlet="template context: {$implicit: node}"></ng-container>
+</div>
+<div ngClass="node-line-vertical" class="node-line" *ngIf="node?.Members?.length"></div>

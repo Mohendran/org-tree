@@ -1,0 +1,16 @@
+<mat-card class="employee-card cursor on-hover">
+  <mat-card-header>
+    <img class="photo-img" [src]="employee.Photo">
+    <mat-card-title-group>
+      <mat-card-title>{{employee.Name}}</mat-card-title>
+      <mat-card-subtitle>{{employee.Designation}} | {{employee.Team}}</mat-card-subtitle>
+    </mat-card-title-group>
+    <div class="find-employee-icon">
+      <button mat-icon-button color="primary" aria-label="Click to highlight the Employee"
+        (click)="selectEmployee(employee.ID)" #tooltip="matTooltip" matTooltip="Click to Highlight"
+        matTooltipPosition="below" aria-tooltip="Click to highlight the Employee">
+        <mat-icon class="display-on-hover" fontIcon="person_search"></mat-icon>
+      </button>
+    </div>
+  </mat-card-header>
+</mat-card>

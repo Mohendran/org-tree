@@ -1,0 +1,73 @@
+:host {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  flex-direction: column;
+}
+
+.hierarchy-tree {
+  &-node-vertical {
+    flex-direction: column;
+    padding: 0 1em;
+  }
+
+  &-children {
+    display: flex;
+    flex: 1;
+
+    .children-container {
+      display: flex;
+
+      &:first-child {
+        &>.lines-container {
+          .lines {
+            &:first-child {
+              background-color: transparent;
+            }
+          }
+        }
+      }
+
+      &:last-child {
+        &>.lines-container {
+          .lines {
+            &:last-child {
+              background-color: transparent;
+            }
+          }
+        }
+      }
+
+      &-vertical {
+        flex-direction: column;
+      }
+
+      .lines {
+        flex: 1;
+        background-color: darkgrey;
+
+        &-container {
+          display: flex;
+
+          &-vertical {
+            .lines {
+              height: 0.2em;
+            }
+
+          }
+        }
+
+      }
+
+      .m-line {
+        width: 0.2em;
+        height: 0.2em;
+        background-color: darkgrey;
+      }
+    }
+  }
+}
+
+.placeholder {
+  background: grey !important;
+}

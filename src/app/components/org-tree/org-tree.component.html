@@ -1,0 +1,12 @@
+<div class="org-tree">
+  <hierarchy-tree [nodes]="[hierarchy]" [template]="nodeTemplate" />
+</div>
+
+<!-- Template for each Node -->
+<ng-template #nodeTemplate let-node>
+  <div class="node-template" *ngIf="node?.ID !== 0">
+    <app-org-node [employee]="node"></app-org-node>
+  </div>
+  <div class="startNode" *ngIf="node?.ID === 0">
+  </div>
+</ng-template>

@@ -1,0 +1,18 @@
+<section>
+  <ng-container *ngIf="employees?.length; else emptyList">
+    <p class="accent-color m-l-16">{{employees.length}} Employee(s) match the Filter Criteria</p>
+    <div class="overflow-y">
+      <div *ngFor="let employee of employees">
+        <app-employee-card [employee]="employee"></app-employee-card>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #emptyList>
+    <div class="empty-list">
+      <mat-icon class="empty-search" fontIcon="search_off"></mat-icon>
+      <h4>No Employees Available!</h4>
+      <h4>Please refine your Search Criteria</h4>
+    </div>
+  </ng-template>
+</section>

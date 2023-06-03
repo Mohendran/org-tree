@@ -1,0 +1,17 @@
+<div class="app-layout" *ngIf="hierarchyEmployeeStructure; else loader">
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #snav opened [mode]="'side'" [fixedInViewport]="true">
+      <app-employee-filter [employees]="employees" />
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <org-tree *ngIf="hierarchyEmployeeStructure" [hierarchy]="hierarchyEmployeeStructure"></org-tree>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+<ng-template #loader>
+  <div class="loader">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>

@@ -1,0 +1,11 @@
+.highlight {
+    box-shadow: 0 0 6px 6px rgba(255,215,64, 0.87) !important;
+}
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .info-icon {
+        font-size: 20px;
+    }
+}

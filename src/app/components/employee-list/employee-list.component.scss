@@ -1,0 +1,28 @@
+section {
+  display: flex;
+  flex-flow: column;
+  height: calc(100% - 260px);
+  margin: 0px;
+}
+
+.accent-color {
+  color: grey;
+}
+
+.empty-list {
+  flex: 2;
+  overflow: auto;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  opacity: 0.5;
+  flex-direction: column;
+
+  .empty-search {
+    font-size: 100px;
+    height: 100px;
+    width: 100px;
+    color: gray;
+    margin: 16px;
+  }
+}

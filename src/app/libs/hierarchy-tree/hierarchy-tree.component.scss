@@ -1,0 +1,12 @@
+.hierarchy-container {
+  display: flex;
+
+  .hierarchy-root {
+    &-vertical {
+      display: flex;
+      margin-bottom: 2%;
+      margin-top: 5%;
+      width: 100%;
+    }
+  }
+}

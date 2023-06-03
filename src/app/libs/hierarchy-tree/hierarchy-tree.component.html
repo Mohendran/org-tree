@@ -1,0 +1,6 @@
+<div *ngIf="nodes?.length" class="hierarchy-container">
+	<div class="hierarchy-root-vertical" *ngFor="let node of nodes">
+		<hierarchy-container [node]="node" [template]="template">
+		</hierarchy-container>
+	</div>
+</div>
