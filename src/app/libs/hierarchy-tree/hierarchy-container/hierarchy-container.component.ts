@@ -1,4 +1,4 @@
-import { Component, Input, TemplateRef, } from '@angular/core';
+import { Component, Input, TemplateRef } from '@angular/core';
 import { DropEffect } from 'ngx-drag-drop';
 import { NestedEmployee } from 'src/app/types/Employee';
 
@@ -18,7 +18,7 @@ export class HierarchyContainerComponent {
   @Input()
   hasParent = false;
 
-  onDragged(item: any, list: any[], effect: DropEffect) {
+  onDragged(item: NestedEmployee, list: any[], effect: DropEffect) {
     if (effect === 'move') {
       const index = list.indexOf(item);
       list.splice(index, 1);

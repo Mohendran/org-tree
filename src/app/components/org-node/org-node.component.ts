@@ -20,7 +20,10 @@ export class OrgNodeComponent {
   constructor(public employeeService: EmployeeService, private dialog: MatDialog) {
     employeeService.selectedEmployeeId$.pipe(untilDestroyed(this)).subscribe((val) => {
       if (this.employee.ID === val) {
-        this.selectedEmployeeCard.nativeElement.scrollIntoView({ behavior: "smooth" });
+        this.selectedEmployeeCard.nativeElement.scrollIntoView({
+          behavior: "smooth",
+          inline: "center"
+        });
       }
     });
   }

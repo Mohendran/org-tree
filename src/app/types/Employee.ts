@@ -36,3 +36,10 @@ export enum Team {
   BackEnd = 'Back End',
   Management = 'Management'
 };
+
+export interface NodeUpdatedEvent {
+  updatedTree?: TreeNode[],
+  oldManager: number,
+  newManager: number,
+  nodeId: number
+}

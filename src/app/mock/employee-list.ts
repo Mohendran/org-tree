@@ -4,7 +4,7 @@ export const employees: Employee[] = [{
     Name: 'Nick Fury',
     ID: 1,
     Team: Team.Management,
-    Manager: null,
+    Manager: 0,
     Designation: "CEO",
     Photo: 'https://hips.hearstapps.com/hmg-prod/images/nick-fury-eye-1552397861.jpg?crop=0.488xw:0.976xh;0,0&resize=1200:*'
 }, {
@@ -77,7 +77,7 @@ export const employees: Employee[] = [{
     Team: Team.FrontEnd,
     Manager: 6,
     Designation: "Reality Warper",
-    Photo: 'https://scontent.fmaa1-4.fna.fbcdn.net/v/t39.30808-6/227181138_1017036585710130_7859251180847012366_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=0xoj5_Bs2_gAX_LHr8G&_nc_ht=scontent.fmaa1-4.fna&oh=00_AfDa2Y9BikR_SkFbND1zRGLUIrNhLNAF1ENX5xX22olerw&oe=647E0F58'
+    Photo: 'https://i.pinimg.com/280x280_RS/e7/f7/51/e7f75144a3613c7ac77d877f251e627d.jpg'
 }, {
     Name: 'TChalla',
     ID: 13,

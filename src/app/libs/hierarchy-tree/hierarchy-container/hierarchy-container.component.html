@@ -1,13 +1,13 @@
 <div>
-  <hierarchy-node *ngIf="node" ngClass="hierarchy-tree-node-vertical" [node]="node" [hasParent]="hasParent"
+  <hierarchy-node *ngIf="node" class="hierarchy-tree-node-vertical" [node]="node" [hasParent]="hasParent"
     [template]="template">
   </hierarchy-node>
 
   <!--Recursive Lopp for handling Members-->
-  <div *ngIf="node?.Members?.length" ngClass="hierarchy-tree-children-vertical" class="hierarchy-tree-children">
+  <div *ngIf="node?.Members?.length" class="hierarchy-tree-children hierarchy-tree-children-vertical">
     <div *ngFor="let childNode of node?.Members; let i = index; first as isFirst; last as isLast"
-      ngClass="children-container-vertical" class="children-container">
-      <div ngClass="lines-container-vertical" class="lines-container">
+      class="children-container children-container-vertical">
+      <div class="lines-container lines-container-vertical">
         <div class="lines"></div>
         <div class="m-line"></div>
         <div class="lines"></div>
