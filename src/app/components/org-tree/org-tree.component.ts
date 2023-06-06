@@ -9,5 +9,5 @@ import { TreeNode } from 'src/app/types/Employee';
 
 export class OrgTreeComponent {
 
-    @Input() hierarchy!: TreeNode;
+    @Input() hierarchy!: TreeNode[];
 }

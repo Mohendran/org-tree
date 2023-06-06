@@ -1,23 +1,23 @@
 :host {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
-.node {
-    &-line {
-        background-color: darkgrey;
+.node-line {
+  background-color: darkgrey;
+  height: 2em;
+  width: 0.2em;
 
-        &-vertical {
-            height: 2em;
-            width: 0.2em;
-        }
-    }
+  &.indirect-node {
+    background-color: transparent;
+    background-image: repeating-linear-gradient(0deg, darkgrey, darkgrey 3px, transparent 2.5px, transparent 5px);
+  }
+}
 
-    &-box{
-        display: flex;
-        align-items: center;
-        color: black;
-        border-radius: .2em;
-        box-shadow: 0.05em 0.05em 0.2em 0.05em #0000002b;
-    }
+.node-box {
+  display: flex;
+  align-items: center;
+  color: black;
+  border-radius: .2em;
+  box-shadow: 0.05em 0.05em 0.2em 0.05em #0000002b;
 }

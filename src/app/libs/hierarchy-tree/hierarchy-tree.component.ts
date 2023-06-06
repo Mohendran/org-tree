@@ -1,5 +1,5 @@
 import { Component, Input, TemplateRef } from '@angular/core';
-import { NestedEmployee } from '../../types/Employee';
+import { TreeNode } from '../../types/Employee';
 
 @Component({
   selector: 'hierarchy-tree',
@@ -17,7 +17,7 @@ export class HierarchyTreeComponent {
   template!: TemplateRef<any>;
 
   @Input()
-  nodes!: NestedEmployee[];
+  nodes!: TreeNode[];
 
   @Input()
   hasParent = false;

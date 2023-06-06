@@ -39,7 +39,7 @@ export const employees: Employee[] = [{
 }, {
     Name: 'Dr.Strange',
     ID: 6,
-    Team: Team.FrontEnd,
+    Team: Team.Management,
     Manager: 3,
     Designation: "Magician",
     Photo: 'https://pbs.twimg.com/media/C1ffu8EUcAAI6M6?format=jpg&name=medium'
@@ -60,7 +60,7 @@ export const employees: Employee[] = [{
 }, {
     Name: 'Bruce Banner',
     ID: 9,
-    Team: Team.BackEnd,
+    Team: Team.FrontEnd,
     Manager: 6,
     Designation: "Scientist",
     Photo: 'https://pbs.twimg.com/profile_images/2732115761/625134a71e36d8396b0675f0393cb6bd_400x400.jpeg'

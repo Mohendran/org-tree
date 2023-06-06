@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Observable, combineLatest, debounceTime, distinctUntilChanged, of, startWith, switchMap } from 'rxjs';
+import { Observable, combineLatest, debounceTime, distinctUntilChanged, of, startWith, switchMap, tap } from 'rxjs';
 import { Employee, Team } from 'src/app/types/Employee';
 
 @Component({
@@ -12,11 +12,13 @@ export class EmployeeFilterComponent {
 
   @Input() employees!: Employee[];
 
+  @Output() teamFilterChange: EventEmitter<Team> = new EventEmitter();
+
   public teams: Team[] = Object.values(Team);
 
   public filterForm: FormGroup = new FormGroup({
     search: new FormControl(''),
-    selectedTeam: new FormControl('')
+    selectedTeam: new FormControl(Team.All)
   });
 
   public filteredEmployees$: Observable<Employee[]> = of([]);
@@ -29,13 +31,13 @@ export class EmployeeFilterComponent {
     );
 
     const teamObservable = this.filterForm.get('selectedTeam')!.valueChanges.pipe(
-      startWith(''),
-      distinctUntilChanged()
+      startWith(Team.All),
+      distinctUntilChanged(),
+      tap((team: Team) => this.teamFilterChange.emit(team))
     );
 
     this.filteredEmployees$ = combineLatest([searchObservable, teamObservable]).pipe(
       switchMap(([searchTerm, selectedTeam]) => {
-        console.log(searchTerm, selectedTeam);
         return this.filterEmployees(searchTerm, selectedTeam)
       })
     )
@@ -48,13 +50,13 @@ export class EmployeeFilterComponent {
 
   filterEmployees(searchTerm: string, selectedTeam: string): Observable<Employee[]> {
     // Return all employees, if search is empty & selectedTeam is All Teams.
-    if (searchTerm.trim() === '' && selectedTeam === '') {
+    if (searchTerm.trim() === '' && selectedTeam === Team.All) {
       return of(this.employees);
     }
 
     const filteredEmployees = this.employees.filter(employee =>
       employee.Name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-      (selectedTeam === '' || employee.Team === selectedTeam)
+      (employee.Team === selectedTeam || selectedTeam === Team.All)
     );
 
     return of(filteredEmployees);

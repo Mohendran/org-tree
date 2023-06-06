@@ -12,7 +12,6 @@
   <mat-form-field class="full-width" appearance="outline">
     <mat-label>Filter Teams</mat-label>
     <mat-select formControlName="selectedTeam">
-      <mat-option value="">All Teams</mat-option>
       <mat-option *ngFor="let team of teams" [value]="team">
         {{team}}
       </mat-option>
