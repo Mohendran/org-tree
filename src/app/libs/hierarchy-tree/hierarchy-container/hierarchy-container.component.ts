@@ -1,6 +1,6 @@
-import { Component, Input, TemplateRef, } from '@angular/core';
+import { Component, Input, TemplateRef } from '@angular/core';
 import { DropEffect } from 'ngx-drag-drop';
-import { NestedEmployee } from 'src/app/types/Employee';
+import { TreeNode } from 'src/app/types';
 
 @Component({
   selector: 'hierarchy-container',
@@ -13,13 +13,14 @@ export class HierarchyContainerComponent {
   template!: TemplateRef<any>;
 
   @Input()
-  node!: NestedEmployee;
+  node!: TreeNode;
 
   @Input()
   hasParent = false;
 
-  onDragged(item: any, list: any[], effect: DropEffect) {
+  onDragged(item: TreeNode, list: any[], effect: DropEffect) {
     if (effect === 'move') {
+      // Remove the dragged Element from the list
       const index = list.indexOf(item);
       list.splice(index, 1);
     }

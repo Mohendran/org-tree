@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { TreeNode } from 'src/app/types/Employee';
+import { TreeNode } from 'src/app/types';
 
 @Component({
     selector: 'org-tree',

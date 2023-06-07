@@ -1,5 +1,5 @@
 import { Component, Input, TemplateRef } from '@angular/core';
-import { TreeNode } from '../../types/Employee';
+import { TreeNode } from 'src/app/types';
 
 @Component({
   selector: 'hierarchy-tree',
@@ -7,11 +7,6 @@ import { TreeNode } from '../../types/Employee';
   styleUrls: ['./hierarchy-tree.component.scss']
 })
 export class HierarchyTreeComponent {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
   @Input()
   template!: TemplateRef<any>;

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { EmployeeService } from './../../services/employee.service';
-import { Employee } from './../../types/Employee';
+import { EmployeeService } from '../../common/employee.service';
+import { Employee } from '../../types';
 
 @Component({
   selector: 'app-employee-card',
