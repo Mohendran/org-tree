@@ -1,4 +1,4 @@
-import { Employee, Team } from "../types/Employee";
+import { Employee, Team } from "../types";
 
 export const employees: Employee[] = [{
     Name: 'Nick Fury',
@@ -84,5 +84,5 @@ export const employees: Employee[] = [{
     Team: Team.BackEnd,
     Manager: 2,
     Designation: "King",
-    Photo: 'https://scontent.fmaa1-3.fna.fbcdn.net/v/t39.30808-6/255766386_269309715210351_5654863375044861007_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=MPDnaK3wdl4AX-TmMWx&_nc_ht=scontent.fmaa1-3.fna&oh=00_AfDyYb9cradym9Z2ENc--W5EbivhFFrat_P0UarPIlXY3Q&oe=647ECC73'
+    Photo: 'https://pbs.twimg.com/profile_images/1299637143413960704/Xd3zpuqb_400x400.jpg'
 }];

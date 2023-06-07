@@ -1,5 +1,5 @@
 import { Component, Input, TemplateRef } from '@angular/core';
-import { TreeNode } from '../../types/Employee';
+import { TreeNode } from 'src/app/types';
 
 @Component({
   selector: 'hierarchy-tree',

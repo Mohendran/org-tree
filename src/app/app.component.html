@@ -1,11 +1,15 @@
-<div class="app-layout" *ngIf="hierarchyEmployeeStructure; else loader">
+<div class="app-layout" *ngIf="!loading; else loader">
   <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #snav opened [mode]="'side'" [fixedInViewport]="true">
-      <app-employee-filter [employees]="employees" (teamFilterChange)="onTeamChange($event)" />
+    <mat-sidenav #snav opened [mode]="'side'" [fixedInViewport]="true" [(opened)]="opened">
+      <app-employee-filter [employees]="employees" (teamFilterChange)="selectedTeam = $event;" />
     </mat-sidenav>
 
     <mat-sidenav-content>
-      <org-tree *ngIf="hierarchyEmployeeStructure" [hierarchy]="[hierarchyEmployeeStructure]"></org-tree>
+      <button mat-icon-button (click)="opened = !opened" #tooltip="matTooltip" matTooltip="Toggle SideNav"
+        matTooltipPosition="below" aria-tooltip="Click to toggle SideNav">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <org-tree *ngIf="employees | nestedTree: selectedTeam as hierarchy" [hierarchy]="[hierarchy]"></org-tree>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
@@ -13,5 +17,6 @@
 <ng-template #loader>
   <div class="loader">
     <mat-spinner></mat-spinner>
+    <h1 class="loading-text">Loading Employees...</h1>
   </div>
 </ng-template>

@@ -1,17 +1,18 @@
 <div #selectedEmployeeCard>
   <mat-card class="on-hover" [class]="{'highlight': (employeeService.selectedEmployeeId$ | async) === employee.ID}">
+
     <mat-card-header>
-        <img class="photo-img" [src]="employee.Photo" >
+      <img class="photo-img" [src]="employee.Photo">
       <mat-card-title-group>
         <mat-card-title>{{employee.Name}}</mat-card-title>
         <mat-card-subtitle>{{employee.Designation}}</mat-card-subtitle>
       </mat-card-title-group>
       <div class="icon">
-        <mat-icon color="primary" class="display-on-hover info-icon cursor" fontIcon="info" (click)="showEmployeeDetails(employee)" #tooltip="matTooltip"
-          matTooltip="Show Employee Details"
-          matTooltipPosition="below"
-          aria-tooltip="Show Employee Details"></mat-icon>
+        <mat-icon color="primary" class="display-on-hover info-icon cursor" fontIcon="info"
+          (click)="showEmployeeDetails(employee)" #tooltip="matTooltip" matTooltip="Show Employee Details"
+          matTooltipPosition="below" aria-tooltip="Show Employee Details"></mat-icon>
       </div>
     </mat-card-header>
+
   </mat-card>
 </div>

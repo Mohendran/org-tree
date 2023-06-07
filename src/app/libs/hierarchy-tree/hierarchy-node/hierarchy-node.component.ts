@@ -1,6 +1,6 @@
 import { Component, Input, TemplateRef } from '@angular/core';
 import { DndDropEvent } from 'ngx-drag-drop';
-import { NestedEmployee } from 'src/app/types/Employee';
+import { TreeNode } from 'src/app/types';
 import { TreeUpdateService } from './../tree-update.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class HierarchyNodeComponent {
   template!: TemplateRef<any>;
 
   @Input()
-  node!: NestedEmployee;
+  node!: TreeNode;
 
   @Input()
   hasParent = false;
@@ -24,14 +24,13 @@ export class HierarchyNodeComponent {
   ngOnInit() {
   }
 
-  onDrop(event: DndDropEvent, list?: NestedEmployee[]) {
+  onDrop(event: DndDropEvent, list?: TreeNode[]) {
     if (list && (event.dropEffect === 'move')) {
       let index = event.index;
-
       if (typeof index === 'undefined') {
         index = list.length;
       }
-
+      // Inserts the dropped element into the list
       list.splice(index, 0, event.data);
 
       this.treeUpdateService.treeUpdated({

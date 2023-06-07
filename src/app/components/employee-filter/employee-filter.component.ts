@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Observable, combineLatest, debounceTime, distinctUntilChanged, of, startWith, switchMap, tap } from 'rxjs';
-import { Employee, Team } from 'src/app/types/Employee';
+import { Employee, Team } from 'src/app/types';
+
 
 @Component({
   selector: 'app-employee-filter',

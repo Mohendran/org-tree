@@ -1,5 +1,7 @@
 <h1 class="title">Organization Hierarchy</h1>
+
 <form [formGroup]="filterForm" class="filterForm">
+
   <mat-form-field appearance="outline" class="full-width">
     <mat-label>Search Employee</mat-label>
     <input type="text" matInput formControlName="search">
@@ -9,6 +11,7 @@
       <mat-icon class="cursor" matSuffix fontIcon="close" (click)="clearSearch()"></mat-icon>
     </ng-template>
   </mat-form-field>
+
   <mat-form-field class="full-width" appearance="outline">
     <mat-label>Filter Teams</mat-label>
     <mat-select formControlName="selectedTeam">
@@ -17,7 +20,9 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
+
 </form>
+
 <ng-container *ngIf="filteredEmployees$ | async as filteredEmployees">
   <employee-list [employees]="filteredEmployees"></employee-list>
 </ng-container>

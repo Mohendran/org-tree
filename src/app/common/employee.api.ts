@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, mapTo, of, switchMap, throwError, timer } from 'rxjs';
 import { employees } from '../mock/employee-list';
-import { Employee } from '../types/Employee';
+import { Employee } from '../types';
 
 @Injectable({ providedIn: 'root' })
 export class EmployeeApi {

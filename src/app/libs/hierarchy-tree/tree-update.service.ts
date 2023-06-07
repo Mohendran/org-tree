@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { NodeUpdatedEvent } from 'src/app/types/Employee';
-
+import { NodeUpdatedEvent } from 'src/app/types';
 
 @Injectable({
   providedIn: 'root'
